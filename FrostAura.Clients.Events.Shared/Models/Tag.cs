@@ -30,5 +30,9 @@ namespace FrostAura.Clients.Events.Shared.Models
         /// Collection for which tags are allowed to access which spaces.
         /// </summary>
         public virtual ICollection<SpaceVisibleToTag> SpacesVisibleToTags { get; set; } = new List<SpaceVisibleToTag>();
+        /// <summary>
+        /// Collection of tags for booking windows.
+        /// </summary>
+        public virtual ICollection<BookingWindowTag> BookingWindowTags { get; set; } = new List<BookingWindowTag>();
     }
 }

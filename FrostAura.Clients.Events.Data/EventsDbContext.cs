@@ -22,8 +22,12 @@ namespace FrostAura.Clients.Events.Data
         public virtual DbSet<VenueAllowedRepeatedBookingForTag> VenueAllowedRepeatedBookingsForTags { get; set; }
         public virtual DbSet<VenueAllowedBookingForTag> VenueAllowedBookingsForTags { get; set; }
         public virtual DbSet<SpaceVisibleToTag> SpacesVisibleToTags { get; set; }
+        public virtual DbSet<SpaceAvailability> SpaceAvailability { get; set; }
         public virtual DbSet<Period> Periods { get; set; }
         public virtual DbSet<Day> Days { get; set; }
         public virtual DbSet<PeriodDay> PeriodDays { get; set; }
+        public virtual DbSet<BookingWindow> BookingWindows { get; set; }
+        public virtual DbSet<SpaceBookingWindow> SpaceBookingWindows { get; set; }
+        public virtual DbSet<BookingWindowTag> BookingWindowTags { get; set; }
     }
 }
