@@ -26,5 +26,9 @@ namespace FrostAura.Clients.Events.Shared.Models
         /// Collection of linked venues allowed to make repeated bookings.
         /// </summary>
         public virtual ICollection<VenueAllowedRepeatedBookingForTag> VenueAllowedRepeatedBookingsForTags { get; set; } = new List<VenueAllowedRepeatedBookingForTag>();
+        /// <summary>
+        /// Collection for which tags are allowed to access which spaces.
+        /// </summary>
+        public virtual ICollection<SpaceVisibleToTag> SpacesVisibleToTags { get; set; } = new List<SpaceVisibleToTag>();
     }
 }
