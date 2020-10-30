@@ -1,0 +1,53 @@
+﻿@page "/device/{DeviceId:int}"
+@using FrostAura.Standard.Components.Razor.Enums.GoogleMap
+@using FrostAura.Clients.Events.Data.Extensions 
+@inherits FrostAura.Standard.Components.Razor.Abstractions.BaseAuthenticatedComponent<DeviceDetails>
+<!-- Should the user be unauthenticated, redirect them to the public view. -->
+<AuthorizeView>
+    <NotAuthorized>
+        <EnsureAuthenticatedUser />
+    </NotAuthorized>
+</AuthorizeView>
+
+<InjectEmbeddedContent ContentName="DeviceDetails.razor.css" HtmlWrapper="style" ContentAssembly="GetType().Assembly" />
+<fa-device-details>
+    <AsyncLoader AsyncWork="_loadDeviceDetailsTask">
+        <LoadingContent>
+            <div class="loader-content">
+                <i class="fa fa-spin fa-spinner"></i>
+            </div>
+        </LoadingContent>
+        <FinalContent>
+            <GoogleMap Center="GetMapCenter()"
+                       Zoom="16"
+                       MapType="MapType.Satellite"
+                       ApiKey="@Configuration.GoogleMapsApiKey"
+                       OnMapReady="HandleOnMapReadyAsync" />
+            <CountdownBar Duration="TimeSpan.FromSeconds(AUTO_REFRESH_INTERVAL)" Infinite="true" OnCountdownZero="async () => await LoadDeviceAsync()" />
+            <TogglableCard>
+                <HeaderContent Context="header">
+                    <div class="header">
+                        <i class="fa fa-eercast @_device.Status"></i>
+                        <div>
+                            <div>@_device.Name</div>
+                            <div class="small">@_device.StatusText</div>
+                        </div>
+                        <i class="fa fa-remove" @onclick="async e => await RemoveDeviceAsync(_device.Id)" title="Remove Device"></i>
+                        <i class="fa fa-@(header.Expanded ? "arrow-down" : "arrow-right")" @onclick="e => header.ToggleExpanded()" title="@(header.Expanded ? "Hide" : "Show") Device Attributes"></i>
+                    </div>
+                </HeaderContent>
+                <BodyContent>
+                    <div class="body">
+                        @foreach (var attr in _device.WithDistinctAttributes().Attributes?.Nodes)
+                        {
+                            <div>
+                                <div class="bold">@attr.Attribute.Name</div>
+                                <div>@attr.Value</div>
+                            </div>
+                        }
+                    </div>
+                </BodyContent>
+            </TogglableCard>
+        </FinalContent>
+    </AsyncLoader>
+</fa-device-details>

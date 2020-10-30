@@ -1,0 +1,55 @@
+﻿@page "/"
+@inherits FrostAura.Standard.Components.Razor.Abstractions.BaseAuthenticatedComponent<Devices>
+
+<InjectEmbeddedContent ContentName="Devices.razor.css" HtmlWrapper="style" ContentAssembly="GetType().Assembly" />
+<fa-devices>
+    <!-- Should the user be unauthenticated, redirect them to the public view. -->
+    <AuthorizeView>
+        <NotAuthorized>
+            <FrostAura.Standard.Components.Razor.Security.EnsureAuthenticatedUser />
+        </NotAuthorized>
+    </AuthorizeView>
+
+    <h1>Devices</h1>
+
+    <AsyncLoader AsyncWork="_devicesLoadingTask">
+        <LoadingContent>
+            <div class="loader-content">
+                <i class="fa fa-spin fa-spinner"></i>
+            </div>
+        </LoadingContent>
+        <FinalContent>
+            <SearchList Items="_devices" Placeholder="Search Devices">
+                <SearchFooterTemplate>
+                    <CountdownBar Duration="TimeSpan.FromSeconds(AUTO_REFRESH_INTERNAL)" Infinite="true" OnCountdownZero="async () => await LoadDevicesAsync()" />
+                </SearchFooterTemplate>
+                <ItemTemplate Context="device">
+                    <TogglableCard>
+                        <HeaderContent Context="header">
+                            <div class="header">
+                                <i class="fa fa-eercast @device.Status"></i>
+                                <div @onclick="e => NavigateToDevice(device.Id)" title="Navigate to Device Details">
+                                    <div>@device.Name</div>
+                                    <div class="small">@device.StatusText</div>
+                                </div>
+                                <i class="fa fa-remove" @onclick="async e => await RemoveDeviceAsync(device.Id)" title="Remove Device"></i>
+                                <i class="fa fa-@(header.Expanded ? "arrow-down" : "arrow-right")" @onclick="e => header.ToggleExpanded()" title="@(header.Expanded ? "Hide" : "Show") Device Attributes"></i>
+                            </div>
+                        </HeaderContent>
+                        <BodyContent>
+                            <div class="body">
+                                @foreach (var attr in device.Attributes?.Nodes)
+                                {
+                                    <div>
+                                        <div class="bold">@attr.Attribute.Name</div>
+                                        <div>@attr.Value</div>
+                                    </div>
+                                }
+                            </div>
+                        </BodyContent>
+                    </TogglableCard>
+                </ItemTemplate>
+            </SearchList>
+        </FinalContent>
+    </AsyncLoader>
+</fa-devices>

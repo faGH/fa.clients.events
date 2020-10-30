@@ -1,0 +1,11 @@
+﻿@page "/settings"
+@inherits FrostAura.Standard.Components.Razor.Abstractions.BaseAuthenticatedComponent<Settings>
+
+<!-- Should the user be unauthenticated, redirect them to the public view. -->
+<AuthorizeView>
+    <NotAuthorized>
+        <FrostAura.Standard.Components.Razor.Navigation.NavigateTo Path="/public" />
+    </NotAuthorized>
+</AuthorizeView>
+
+<h1>Settings</h1>

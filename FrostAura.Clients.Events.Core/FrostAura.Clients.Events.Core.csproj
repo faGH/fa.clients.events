@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Engines\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FrostAura.Libraries.Core" Version="1.1.1" />
+    <PackageReference Include="FrostAura.Standard.Components.Razor" Version="1.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.9" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FrostAura.Clients.Events.Data\FrostAura.Clients.Events.Data.csproj" />
+    <ProjectReference Include="..\FrostAura.Clients.Events.Shared\FrostAura.Clients.Events.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

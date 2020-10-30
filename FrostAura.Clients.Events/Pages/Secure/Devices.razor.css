@@ -1,0 +1,88 @@
+﻿fa-devices {
+    display: block;
+}
+
+    fa-devices .loader-content {
+        text-align: center;
+    }
+
+        fa-devices .loader-content > i {
+            font-size: var(--fa-font-size-big);
+        }
+
+    fa-devices togglable-card {
+        color: var(--fa-color-primary);
+        background-color: var(--fa-background-3);
+        padding: var(--fa-padding-primary);
+        border-bottom: thin solid var(--fa-background-primary);
+    }
+
+        fa-devices togglable-card .header {
+            display: flex;
+            align-items: center;
+        }
+
+        fa-devices togglable-card .body {
+            padding: var(--fa-padding-primary);
+            font-size: var(--fa-font-size-small);
+        }
+
+        fa-devices togglable-card .bold {
+            text-align: right;
+            padding-right: var(--fa-padding-primary);
+        }
+
+        fa-devices togglable-card .body > div {
+            display: flex;
+        }
+
+            fa-devices togglable-card .body > div > * {
+                flex: 1
+            }
+
+            fa-devices togglable-card .body > div:nth-of-type(odd) {
+                opacity: 0.5;
+            }
+
+        fa-devices togglable-card .header div {
+            flex: 1;
+            font-size: var(--fa-font-size);
+            cursor: pointer;
+        }
+
+            fa-devices togglable-card .header div.small {
+                opacity: 0.7;
+                font-size: var(--fa-font-size-small);
+            }
+
+    fa-devices i {
+        padding: var(--fa-padding-primary);
+    }
+
+        fa-devices i.fa-eercast {
+            padding-right: calc(var(--fa-padding-primary) * 2);
+        }
+
+        fa-devices i.fa-arrow-down,
+        fa-devices i.fa-arrow-right,
+        fa-devices i.fa-remove {
+            cursor: pointer;
+        }
+
+        fa-devices i.fa-remove {
+            padding-left: calc(var(--fa-padding-primary) * 2);
+            /* TODO: Remove when device management becomes a desired feature. */
+            display: none;
+        }
+
+        fa-devices i.Inactive {
+            color: var(--fa-color-negative);
+        }
+
+        fa-devices i.Online {
+            color: var(--fa-color-positive);
+        }
+
+        fa-devices i.Offline {
+            color: var(--fa-color-warning);
+        }
