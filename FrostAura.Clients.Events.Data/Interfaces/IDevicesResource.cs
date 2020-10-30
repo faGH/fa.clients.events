@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Attribute = FrostAura.Clients.Events.Shared.Models.Attribute;
+using Venue = FrostAura.Clients.Events.Shared.Models.Venue;
 
 namespace FrostAura.Clients.Events.Data.Interfaces
 {
@@ -24,7 +24,7 @@ namespace FrostAura.Clients.Events.Data.Interfaces
         /// <param name="sessionToken">Session token.</param>
         /// <param name="token">Cancellation token.</param>
         /// <returns>Attributes for the given session token.</returns>
-        Task<List<Attribute>> GetAttributeForTokenAsync(string sessionToken, CancellationToken token);
+        Task<List<Venue>> GetAttributeForTokenAsync(string sessionToken, CancellationToken token);
         /// <summary>
         /// Get a device from it's id.
         /// </summary>

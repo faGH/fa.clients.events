@@ -144,9 +144,9 @@ namespace FrostAura.Clients.Events.Data.Resources
         /// <param name="sessionToken">Session token.</param>
         /// <param name="token">Cancellation token.</param>
         /// <returns>Attributes for the given session token.</returns>
-        public async Task<List<Shared.Models.Attribute>> GetAttributeForTokenAsync(string sessionToken, CancellationToken token)
+        public async Task<List<Shared.Models.Venue>> GetAttributeForTokenAsync(string sessionToken, CancellationToken token)
         {
-            var response = await QueryPagedGraphQlEndpointAsync<NodeList<Shared.Models.Attribute>>(@"
+            var response = await QueryPagedGraphQlEndpointAsync<NodeList<Shared.Models.Venue>>(@"
                 query{
                   attributes{
                     nodes{

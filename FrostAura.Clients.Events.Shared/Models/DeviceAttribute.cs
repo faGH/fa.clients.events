@@ -12,7 +12,7 @@ namespace FrostAura.Clients.Events.Shared.Models
         /// <summary>
         /// Attribute context.
         /// </summary>
-        public Attribute Attribute { get; set; }
+        public Venue Attribute { get; set; }
         /// <summary>
         /// Attribute value.
         /// </summary>
