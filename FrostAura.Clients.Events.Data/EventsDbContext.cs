@@ -29,5 +29,17 @@ namespace FrostAura.Clients.Events.Data
         public virtual DbSet<BookingWindow> BookingWindows { get; set; }
         public virtual DbSet<SpaceBookingWindow> SpaceBookingWindows { get; set; }
         public virtual DbSet<BookingWindowTag> BookingWindowTags { get; set; }
+        public virtual DbSet<Operator> Operators { get; set; }
+        public virtual DbSet<Duration> Durations { get; set; }
+        public virtual DbSet<ControlType> ControlTypes { get; set; }
+        public virtual DbSet<Condition> Conditions { get; set; }
+        public virtual DbSet<OrLogic> OrLogic { get; set; }
+        public virtual DbSet<LogicKey> LogicKeys { get; set; }
+        public virtual DbSet<SpaceCondition> SpaceConditions { get; set; }
+        public virtual DbSet<ConditionPeriod> ConditionPeriods { get; set; }
+        public virtual DbSet<OrLogicCondition> OrLogicConditions { get; set; }
+        public virtual DbSet<IfLogic> IfLogic { get; set; }
+        public virtual DbSet<IfLogicTag> IfLogicTags { get; set; }
+        public virtual DbSet<OrLogicIfLogicGroup> OrLogicIfLogicGroups { get; set; }
     }
 }

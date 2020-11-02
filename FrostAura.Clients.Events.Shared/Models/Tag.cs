@@ -34,5 +34,9 @@ namespace FrostAura.Clients.Events.Shared.Models
         /// Collection of tags for booking windows.
         /// </summary>
         public virtual ICollection<BookingWindowTag> BookingWindowTags { get; set; } = new List<BookingWindowTag>();
+        /// <summary>
+        /// Collection of tags for if logic.
+        /// </summary>
+        public virtual ICollection<IfLogicTag> IfLogicTags { get; set; } = new List<IfLogicTag>();
     }
 }

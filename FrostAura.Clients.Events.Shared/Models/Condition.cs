@@ -7,24 +7,28 @@ using System.Diagnostics;
 namespace FrostAura.Clients.Events.Shared.Models
 {
     /// <summary>
-    /// Time period model.
+    /// Condition model.
     /// </summary>
     [DebuggerDisplay("Name: {Name}")]
-    [Table("Periods")]
-    public class Period : BaseEntity 
+    [Table("Conditions")]
+    public class Condition : BaseEntity 
     {
         /// <summary>
-        /// The display name for the period.
+        /// The display name for the condition.
         /// </summary>
-        [Required(AllowEmptyStrings = false, ErrorMessage = "A valid name is required for the period.")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "A valid name is required for the condition.")]
         public string Name { get; set; }
         /// <summary>
-        /// Collection for which period days.
+        /// Collection of booking conditions for the space.
         /// </summary>
-        public virtual ICollection<PeriodDay> PeriodDays { get; set; } = new List<PeriodDay>();
+        public virtual ICollection<SpaceCondition> SpaceConditions { get; set; } = new List<SpaceCondition>();
         /// <summary>
         /// Collection of periods the conditions is available for.
         /// </summary>
         public virtual ICollection<ConditionPeriod> Periods { get; set; } = new List<ConditionPeriod>();
+        /// <summary>
+        /// Collection of or logics this condition is assigned to.
+        /// </summary>
+        public virtual ICollection<OrLogicCondition> OrLogicConditions { get; set; } = new List<OrLogicCondition>();
     }
 }

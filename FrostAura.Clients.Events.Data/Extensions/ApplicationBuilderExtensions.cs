@@ -56,19 +56,19 @@ namespace FrostAura.Clients.Events.Data.Extensions
                     .ServiceProvider
                     .GetRequiredService<ILogger<TCaller>>()
                     .ThrowIfNull("Logger");
-                var devicesDbContext = serviceScope
+                var dbContext = serviceScope
                     .ServiceProvider
                     .GetRequiredService<EventsDbContext>();
 
-                logger.LogInformation($"Migrating database '{nameof(devicesDbContext)}' => '{devicesDbContext.Database.GetDbConnection().ConnectionString}'.");
+                logger.LogInformation($"Migrating database '{nameof(dbContext)}' => '{dbContext.Database.GetDbConnection().ConnectionString}'.");
 
-                devicesDbContext
+                dbContext
                     .Database
                     .Migrate();
 
                 // Seed data goes here.
 
-                await devicesDbContext.SaveChangesAsync();
+                await dbContext.SaveChangesAsync();
             }
 
             return app;
