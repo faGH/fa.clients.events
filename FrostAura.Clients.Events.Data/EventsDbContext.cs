@@ -41,5 +41,8 @@ namespace FrostAura.Clients.Events.Data
         public virtual DbSet<IfLogic> IfLogic { get; set; }
         public virtual DbSet<IfLogicTag> IfLogicTags { get; set; }
         public virtual DbSet<OrLogicIfLogicGroup> OrLogicIfLogicGroups { get; set; }
+        public virtual DbSet<Limit> Limits { get; set; }
+        public virtual DbSet<SpaceLimit> SpaceLimits { get; set; }
+        public virtual DbSet<LimitTag> LimitTags { get; set; }
     }
 }

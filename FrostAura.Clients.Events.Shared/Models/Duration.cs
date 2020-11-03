@@ -28,5 +28,9 @@ namespace FrostAura.Clients.Events.Shared.Models
         /// Collection of if logics this is assigned to.
         /// </summary>
         public virtual ICollection<IfLogic> IfLogic { get; set; } = new List<IfLogic>();
+        /// <summary>
+        /// Collection of limits this is assigned to.
+        /// </summary>
+        public virtual ICollection<Limit> Limits { get; set; } = new List<Limit>();
     }
 }

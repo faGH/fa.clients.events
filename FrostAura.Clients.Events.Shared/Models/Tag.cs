@@ -38,5 +38,9 @@ namespace FrostAura.Clients.Events.Shared.Models
         /// Collection of tags for if logic.
         /// </summary>
         public virtual ICollection<IfLogicTag> IfLogicTags { get; set; } = new List<IfLogicTag>();
+        /// <summary>
+        /// Collection of tags for limits.
+        /// </summary>
+        public virtual ICollection<LimitTag> LimitTags { get; set; } = new List<LimitTag>();
     }
 }

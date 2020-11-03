@@ -44,5 +44,9 @@ namespace FrostAura.Clients.Events.Shared.Models
         /// Collection of booking conditions for the space.
         /// </summary>
         public virtual ICollection<SpaceCondition> SpaceConditions { get; set; } = new List<SpaceCondition>();
+        /// <summary>
+        /// Collection of booking limits for the space.
+        /// </summary>
+        public virtual ICollection<SpaceLimit> SpaceLimits { get; set; } = new List<SpaceLimit>();
     }
 }
