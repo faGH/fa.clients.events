@@ -5,11 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Pages\Secure\DeviceDetails.razor.css" />
-    <None Remove="Pages\Secure\Devices.razor.css" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
   </ItemGroup>
 
@@ -17,11 +12,6 @@
     <ProjectReference Include="..\FrostAura.Clients.Events.Core\FrostAura.Clients.Events.Core.csproj" />
     <ProjectReference Include="..\FrostAura.Clients.Events.Data\FrostAura.Clients.Events.Data.csproj" />
     <ProjectReference Include="..\FrostAura.Clients.Events.Shared\FrostAura.Clients.Events.Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\Secure\DeviceDetails.razor.css" />
-    <EmbeddedResource Include="Pages\Secure\Devices.razor.css" />
   </ItemGroup>
 
 </Project>

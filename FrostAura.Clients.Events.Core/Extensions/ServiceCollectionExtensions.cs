@@ -71,9 +71,9 @@ namespace FrostAura.Clients.Events.Core.Extensions
                     // Unauthenticated nav items.
                     c.NavigationItems.Add(new NavLink
                     {
-                        IconCssClass = "fa fa-home",
-                        Title = "Public Zone",
-                        Path = "/public",
+                        IconCssClass = "fa fa-calendar",
+                        Title = "Schedule",
+                        Path = "/Schedule",
                         MatchType = Microsoft.AspNetCore.Components.Routing.NavLinkMatch.All
                     });
                     c.NavigationItems.Add(new NavLink
@@ -86,11 +86,17 @@ namespace FrostAura.Clients.Events.Core.Extensions
                     // Authenticated nav items.
                     c.NavigationItems.Add(new NavLink
                     {
-                        IconCssClass = "fa fa-cubes",
-                        Title = "Devices",
-                        Path = "/",
-                        RequireAuthentication = true,
-                        MatchType = Microsoft.AspNetCore.Components.Routing.NavLinkMatch.All
+                        IconCssClass = "fa fa-calendar",
+                        Title = "Schedule",
+                        Path = "/schedule",
+                        RequireAuthentication = true
+                    });
+                    c.NavigationItems.Add(new NavLink
+                    {
+                        IconCssClass = "fa fa-users",
+                        Title = "Users",
+                        Path = "/users",
+                        RequireAuthentication = true
                     });
                     c.NavigationItems.Add(new NavLink
                     {
