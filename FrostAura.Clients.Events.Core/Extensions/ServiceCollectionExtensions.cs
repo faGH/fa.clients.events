@@ -79,7 +79,7 @@ namespace FrostAura.Clients.Events.Core.Extensions
                     c.NavigationItems.Add(new NavLink
                     {
                         IconCssClass = "fa fa-sign-in",
-                        Title = "Client Area",
+                        Title = "Sign In",
                         Path = $"identity/login?redirectUri={Uri.EscapeUriString("/")}"
                     });
 
