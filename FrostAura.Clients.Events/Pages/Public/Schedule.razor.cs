@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 namespace FrostAura.Clients.Events.Pages.Public
 {
     /// <summary>
-    /// Public home component.
+    /// Public schedule component.
     /// </summary>
-    public partial class Home : BaseComponent<Home>
+    public partial class Schedule : BaseComponent<Schedule>
     {
         /// <summary>
         /// Lifecycle event.
@@ -15,7 +15,7 @@ namespace FrostAura.Clients.Events.Pages.Public
         {
             await base.OnParametersSetAsync();
 
-            NavigationService.PageTitleStream.Value = "Public";
+            NavigationService.PageTitleStream.Value = "Schedule";
         }
     }
 }

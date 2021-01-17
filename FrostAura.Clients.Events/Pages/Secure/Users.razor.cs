@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 namespace FrostAura.Clients.Events.Pages.Secure
 {
     /// <summary>
-    /// Settings component for authenticated users.
+    /// Users component for authenticated users.
     /// </summary>
-    public partial class Settings : BaseAuthenticatedComponent<Settings>
+    public partial class Users : BaseAuthenticatedComponent<Users>
     {
         /// <summary>
         /// Lifecycle event.
@@ -15,7 +15,7 @@ namespace FrostAura.Clients.Events.Pages.Secure
         {
             await base.OnParametersSetAsync();
 
-            NavigationService.PageTitleStream.Value = "Settings";
+            NavigationService.PageTitleStream.Value = "Users";
         }
     }
 }
