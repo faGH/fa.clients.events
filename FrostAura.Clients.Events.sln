@@ -21,6 +21,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrostAura.Clients.Events.Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrostAura.Clients.Events.Shared", "FrostAura.Clients.Events.Shared\FrostAura.Clients.Events.Shared.csproj", "{FAA1DE8B-C85C-498A-A33F-2AD3F1293A4B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrostAura.Clients.Events.Data.Tests", "FrostAura.Clients.Events.Data.Tests\FrostAura.Clients.Events.Data.Tests.csproj", "{20086124-6C8A-4FEF-9698-F88799F62527}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrostAura.Clients.Events.Core.Tests", "FrostAura.Clients.Events.Core.Tests\FrostAura.Clients.Events.Core.Tests.csproj", "{8C269413-C66E-426C-9F73-E2C4A92CFD13}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +47,14 @@ Global
 		{FAA1DE8B-C85C-498A-A33F-2AD3F1293A4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAA1DE8B-C85C-498A-A33F-2AD3F1293A4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAA1DE8B-C85C-498A-A33F-2AD3F1293A4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20086124-6C8A-4FEF-9698-F88799F62527}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20086124-6C8A-4FEF-9698-F88799F62527}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20086124-6C8A-4FEF-9698-F88799F62527}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20086124-6C8A-4FEF-9698-F88799F62527}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C269413-C66E-426C-9F73-E2C4A92CFD13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C269413-C66E-426C-9F73-E2C4A92CFD13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C269413-C66E-426C-9F73-E2C4A92CFD13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C269413-C66E-426C-9F73-E2C4A92CFD13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +63,8 @@ Global
 		{A6BC60AF-75B5-4840-9E91-30D3C4461B63} = {4898F0BA-4003-4173-B10B-B86C7B0F7499}
 		{EBE0B4E2-48C9-49F2-AC37-03C281F19A5C} = {4898F0BA-4003-4173-B10B-B86C7B0F7499}
 		{FAA1DE8B-C85C-498A-A33F-2AD3F1293A4B} = {4898F0BA-4003-4173-B10B-B86C7B0F7499}
+		{20086124-6C8A-4FEF-9698-F88799F62527} = {4898F0BA-4003-4173-B10B-B86C7B0F7499}
+		{8C269413-C66E-426C-9F73-E2C4A92CFD13} = {4898F0BA-4003-4173-B10B-B86C7B0F7499}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CC45936D-0C9C-47BB-AFCE-C44B03DE914B}

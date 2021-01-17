@@ -5,7 +5,8 @@ WORKDIR /app
 # Copy everything and restore / publish the solution.
 COPY . ./
 RUN dotnet build ./FrostAura.Clients.Events/FrostAura.Clients.Events.csproj
-#RUN dotnet build ./FrostAura.Services.Identity.Core.Tests/FrostAura.Services.Identity.Core.Tests.csproj
+RUN dotnet build ./FrostAura.Clients.Events.Core.Tests/FrostAura.Clients.Events.Core.Tests.csproj
+RUN dotnet build ./FrostAura.Clients.Events.Data.Tests/FrostAura.Clients.Events.Data.Tests.csproj
 RUN dotnet publish ./FrostAura.Clients.Events/FrostAura.Clients.Events.csproj -c Release -o /app/out
 
 # Build runtime image off the correct base.
