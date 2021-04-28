@@ -1,4 +1,5 @@
 ﻿using FrostAura.Libraries.Data.Models.EntityFramework;
+using FrostAura.Standard.Components.Razor.Attributes.Rendering;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -32,14 +33,17 @@ namespace FrostAura.Clients.Events.Shared.Models
         /// Linked duration object.
         /// </summary>
         [ForeignKey(nameof(DurationId))]
+        [FieldIgnore]
         public virtual Duration Duration { get; set; }
         /// <summary>
         /// Collection of booking limits for the limit.
         /// </summary>
+        [FieldIgnore]
         public virtual ICollection<SpaceLimit> SpaceLimits { get; set; } = new List<SpaceLimit>();
         /// <summary>
         /// Collection of tags for the limit.
         /// </summary>
+        [FieldIgnore]
         public virtual ICollection<LimitTag> LimitTags { get; set; } = new List<LimitTag>();
     }
 }
